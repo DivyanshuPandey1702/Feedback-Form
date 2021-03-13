@@ -1,0 +1,48 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #edeef7;
+}
+
+.bg-custom {
+  background-color: #7868e6;
+}
+
+.heading {
+  background-color: #7868e6;
+  height: 200px;
+}
+
+.footer {
+  text-align: center;
+  color: gray;
+}
+
+.form {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+  border: 6px solid white;
+  border-top-color: #b8b5ff;
+  box-shadow: 5px 5px 5px 0px #888888;
+  position: relative;
+  top: -100px;
+  margin-bottom: 24px;
+}
+
+.headmsg {
+  color: red;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.gray-text {
+  color: gray;
+}
+
+.form-control {
+  width: 30%;
+}

@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="form">
+
+  <br>
+  <h3><%= data.length %> Responses</h3><br>
+
+  <% if(data.length > 0) { %>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <%for(let i = 0; i < data[0].que.length; i++) {%>
+        <th scope="col"><%=(i+1)%></th>
+        <%}%>
+          <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(let i = 0; i < data.length; i++) {%>
+      <tr>
+        <th scope="row"> <%= (i+1) %> </th>
+        <td> <%= data[i].name %> </td>
+        <td> <%= data[i].email %> </td>
+        <%for(let j = 0; j < data[i].que.length; j++) {%>
+        <td> <%= data[i].que[j].op %> </td>
+        <%}%>
+          <td>
+            <form action="/response" method="post">
+              <button type="submit" class="btn btn-primary btn-sm" name="btn" value="<%= data[i]._id %>">x</button>
+        </form>
+        </td>
+      </tr>
+      <%}%>
+          </tbody>
+    </table><br>
+  <%}%>
+
+</div>
+
+<div class="form">
+  <br>
+  <h4>Questions: </h4><br>
+  <% for(let i = 0; i < questions.length; i++) { %>
+  <p> <%= (i+1) + ". Teacher " + questions[i] + "." %> </p>
+  <%}%><br>
+</div>
+
+
+<%- include("partials/footer.ejs") -%>

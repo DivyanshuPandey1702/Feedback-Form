@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="form">
+
+  <br>
+  <h4 class="center-text">Shri Ramdeobaba College of Engineering & Management, Nagpur – 440013</h4><br>
+  <h4 class="center-text">Department of Information Technology (2020-21)</h4><br>
+  <p>Subject: Software Engineering</p>
+  <p>Semester: IV</p>
+  <div class="headmsg">
+    <p>* All Fields are Required.</p>
+  </div><br>
+  <div class="center-text">
+    <h1>Feedback Form</h1>
+  </div><br>
+
+  <form class="was-validated" action="/submitted" method="post">
+    <div class="mb-3">
+      <label for="userName" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="userName" name="userName" required>
+    </div>
+    <div class="mb-3">
+      <label for="userEmail" class="form-label">Email address:</label>
+      <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+    </div><br>
+    <h4 class="center-text">Questions</h4><br>
+    <% for(let i = 0; i < questions.length; i++) { %>
+    <div class="mb-3">
+      <p> <%= (i+1) + ". Teacher " + questions[i] + "." %> </p>
+      <% for(let j = 1; j <= 10; j++) { %>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="<%="q["+i+"]"%>" id="<%="inlineRadio"+j%>" value="<%=j%>" required>
+        <label class="form-check-label" for="<%="inlineRadio"+j%>"><%=j%></label>
+      </div>
+      <%}%>
+      </div><br>
+    <%}%>
+      <p class="gray-text">Your feedback will be recorded.</p><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form><br>
+
+</div>
+<%- include("partials/footer.ejs") -%>
